@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <form [formGroup]="eventForm" (ngSubmit)="createEvent()">
+    <ion-item>
+      <ion-label position="floating">Título del Evento</ion-label>
+      <ion-input formControlName="title" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Descripción</ion-label>
+      <ion-input formControlName="description" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Dirección</ion-label>
+      <ion-input formControlName="direccion" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Fecha</ion-label>
+      <ion-input formControlName="date" type="date" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Duración (en horas)</ion-label>
+      <ion-input formControlName="duration" type="number" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Número de Asistentes</ion-label>
+      <ion-input formControlName="numberOfAttendees" type="number" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Requisitos Especiales</ion-label>
+      <ion-input formControlName="specialRequirements"></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" type="submit" [disabled]="eventForm.invalid">Crear Evento</ion-button>
+  </form>
+  
+   <br>
+          <app-event></app-event>
+
+</ion-content>

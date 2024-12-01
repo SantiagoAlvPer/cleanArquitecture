@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Eventos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let event of events">
+    <ion-item>
+      <ion-label>{{ event.title }}</ion-label>
+    </ion-item>
+    <ion-item>
+      <p>{{event.description}}</p>
+    </ion-item>
+    <ion-item>
+      <p>{{event.direccion}}</p>
+    </ion-item>
+    <ion-item>
+      <p>{{event.specialRequirements}}</p>
+    </ion-item>
+    <ion-item>
+      <p>{{event.numberOfAttendees}}</p>
+    </ion-item>
+    <ion-item>
+      <p>{{event.duration}}</p>
+    </ion-item>
+    <ion-item>
+      <p>{{event.date}}</p>
+    </ion-item>
+
+    <ion-button (click)="goToUpdatePage(event.eventID)" color="primary">
+      update
+    </ion-button>
+    <ion-button (click)="deleteEvent(event.eventID)" color="danger">
+      delete
+    </ion-button>
+  </div>
+</ion-content>

@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>eventUpdate</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form *ngIf="event" (ngSubmit)="saveEvent()">
+    <ion-item>
+      <ion-label position="stacked">Título</ion-label>
+      <ion-input [(ngModel)]="event.title" name="title" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Descripción</ion-label>
+      <ion-input [(ngModel)]="event.description" name="description" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Dirección</ion-label>
+      <ion-input [(ngModel)]="event.direccion" name="direccion"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Duración</ion-label>
+      <ion-input [(ngModel)]="event.duration" name="duration" type="number"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Número de Asistentes</ion-label>
+      <ion-input [(ngModel)]="event.numberOfAttendees" name="numberOfAttendees" type="number"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Requisitos Especiales</ion-label>
+      <ion-input [(ngModel)]="event.specialRequirements" name="specialRequirements"></ion-input>
+    </ion-item>
+
+    <ion-button (click)="saveEvent()">Guardar</ion-button>
+  </form>
+</ion-content>
